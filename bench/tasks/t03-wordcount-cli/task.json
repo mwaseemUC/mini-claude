@@ -1,0 +1,8 @@
+{
+  "id": "t03-wordcount-cli",
+  "title": "Build the wordcount CLI from the README",
+  "prompt": "README.md describes a small command line tool, wordcount.py. It doesn't exist yet. Implement it exactly as documented.",
+  "difficulty": "medium",
+  "needs_execution": false,
+  "why": "Many small exact-format requirements (output layout, tie-break order, error exit code) spread across a README."
+}

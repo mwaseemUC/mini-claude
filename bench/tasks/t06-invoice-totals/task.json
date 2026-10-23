@@ -1,0 +1,8 @@
+{
+  "id": "t06-invoice-totals",
+  "title": "Invoice totals disagree with accounting",
+  "prompt": "report.py's totals don't match accounting's expected_totals.txt - fix report.py.",
+  "difficulty": "hard",
+  "needs_execution": false,
+  "why": "Two interacting causes (discount applied after tax and float rounding) plus an unstated clamp-at-zero rule that is only visible in the expected file."
+}

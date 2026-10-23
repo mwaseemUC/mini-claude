@@ -1,0 +1,8 @@
+{
+  "id": "t08-vendor-pyc",
+  "title": "Use a compiled-only vendor library",
+  "prompt": "Write convert.py with a function to_celsius(fahrenheit) using the vendor library vendorlib (we only have the compiled module).",
+  "difficulty": "hard",
+  "needs_execution": true,
+  "why": "There is no source to read; the keyword-only API, unit names and Measurement.magnitude result are only discoverable by running help()/dir() on the module."
+}

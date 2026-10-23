@@ -1,0 +1,8 @@
+{
+  "id": "t04-lru-cache",
+  "title": "Implement LRUCache to pass the tests",
+  "prompt": "tests/test_cache.py describes an LRUCache class but cache.py doesn't exist yet. Write cache.py so those tests pass.",
+  "difficulty": "medium",
+  "needs_execution": false,
+  "why": "Tests define the contract; edge cases (recency refresh on get/update, capacity 1, default on miss) must be inferred."
+}

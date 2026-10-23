@@ -1,0 +1,8 @@
+{
+  "id": "t09-cp1252-csv",
+  "title": "users.csv import crashes",
+  "prompt": "import_users.py crashes on users.csv from the client - fix it so names import correctly.",
+  "difficulty": "hard",
+  "needs_execution": true,
+  "why": "The file's encoding (Windows-1252) is only discoverable by running the script and inspecting the raw bytes; latin-1 or errors='replace' silently give wrong text."
+}

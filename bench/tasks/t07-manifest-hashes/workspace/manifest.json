@@ -1,0 +1,8 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "data/users.txt": "012bfb29e5879ab5f5831431d17427ca032542d4f46d3296ab107553d27f1c22",
+    "data/prices.csv": "137549e6d0ce496389aef261434fa2933af220b8f3302c63149e6817921ec8eb",
+    "data/notes.txt": "4a61e6333eb57d7ed456c1061d21cf4463d9e3bba3fbe89fccd17ef63761652d"
+  }
+}

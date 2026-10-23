@@ -1,0 +1,8 @@
+{
+  "id": "t07-manifest-hashes",
+  "title": "Refresh stale checksums in manifest.json",
+  "prompt": "The data files changed; update manifest.json so verify.py passes. Don't change the data files.",
+  "difficulty": "hard",
+  "needs_execution": true,
+  "why": "SHA-256 values cannot be produced by reading files; the agent must run code (and notice the newly added unlisted file)."
+}

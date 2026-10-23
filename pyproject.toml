@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mini-claude"
+version = "0.1.0"
+description = "A minimal coding agent CLI in a few hundred lines of Python, no agent framework"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [{ name = "Afnan Waseem", email = "mwaseem@uchicago.edu" }]
+license = { text = "MIT" }
+dependencies = [
+    "anthropic>=2.2,<3",
+    "rich>=13",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+mini-claude = "mini_claude.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mini_claude"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["*.md", "bench/tasks", "examples"]  # fixtures and agent-written output, kept verbatim
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]

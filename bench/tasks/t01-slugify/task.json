@@ -1,0 +1,8 @@
+{
+  "id": "t01-slugify",
+  "title": "Implement slugify from its docstring",
+  "prompt": "Implement slugify() in slugify.py. The docstring has the full spec.",
+  "difficulty": "easy",
+  "needs_execution": false,
+  "why": "Pure spec-to-code; the only trap is the exact truncation rule at a word boundary."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "t10-test-pollution",
+  "title": "Tests pass alone but fail together",
+  "prompt": "Our tests pass one at a time but fail when we run the whole suite. Fix the bug in the code (not the tests).",
+  "difficulty": "hard",
+  "needs_execution": true,
+  "why": "The failure only shows when the whole suite runs; there are two independent shared-state leaks (mutable default and class-level list) and fixing one still leaves failures."
+}

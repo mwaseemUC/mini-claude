@@ -1,0 +1,8 @@
+{
+  "id": "t05-rename-api",
+  "title": "Rename calc_total with a deprecated alias",
+  "prompt": "Do the change described in CHANGES.md.",
+  "difficulty": "medium",
+  "needs_execution": false,
+  "why": "Multi-file refactor: callers in other modules must move to the new name, and the alias must warn without being triggered internally."
+}
