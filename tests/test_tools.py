@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 import pytest
@@ -36,14 +37,21 @@ def test_read_file_numbers_lines(ws: Path) -> None:
     assert "   2 |     return a - b" in text
 
 
-@pytest.mark.parametrize("path", ["../outside.txt", "..\\..\\x", "/etc/passwd", "pkg/../../x"])
+# Backslash is a path separator only on Windows; on Linux "..\\..\\x" is a plain filename.
+ESCAPES = ["../outside.txt", "/etc/passwd", "pkg/../../x"] + (
+    ["..\\..\\x"] if os.name == "nt" else []
+)
+
+
+@pytest.mark.parametrize("path", ESCAPES)
 def test_paths_outside_workspace_are_refused(ws: Path, path: str) -> None:
     for tool, args in [
         ("read_file", {"path": path}),
         ("write_file", {"path": path, "content": "x"}),
     ]:
         text, err = Toolbox(ws, yes).run(tool, args)
-        assert err and "outside the workspace" in text or "not a file" in text
+        assert err, f"{tool}({path!r}) was allowed: {text}"
+        assert "outside the workspace" in text
 
 
 def test_write_file_shows_diff_and_writes_when_approved(ws: Path) -> None:
